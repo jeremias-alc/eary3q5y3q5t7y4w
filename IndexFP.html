@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="StyleFP.css">
+    <script src="FuntionFP2.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="FormsStyle.css">
+    <title>JavySorts</title>
+    <link rel="icon" href="LogoJavySorts.png" type="image/png">
+</head>
+<body>
+    <header>
+        <img src="LogoHeader.png" alt="Logo Javy Sorts" class="logo">
+        <button class="header-buttons header-buttonspt1" onclick="showSection('mainContainer')">
+            <i class="fas fa-home"></i> Inicio
+        </button>
+        <button class="header-buttons header-buttonspt1" onclick="showSection('createListContainer')">
+            <i class="fas fa-plus-circle"></i> Crear Nueva Lista
+        </button>
+        <button class="header-buttons header-buttonspt1" onclick="showSection('listContainer')">
+            <i class="fas fa-list"></i> Listas Creadas
+        </button>
+        
+
+        
+        <button class="header-buttons TrashButtonMargin header-buttonspt2" onclick="showSection('TrashSec')">
+            <i class="fas fa-trash-alt"></i> Papelera
+        </button>
+        <button class="header-buttons header-buttonspt2" onclick="showSection('helpSection')">
+            <i class="fas fa-book"></i> Conoce JavySorts
+        </button>
+    <!--<button class="header-buttons header-buttonspt2" onclick="showSection('settingsSection')">
+            <i class="fas fa-cog"></i> Ajustes 
+        </button>-->
+    
+    <!-- Separador -->
+    <hr class="header-separator">
+    
+    <!-- Iconos de Redes Sociales -->
+    <div class="social-container">
+        <a class="social-icon" href="https://www.facebook.com/jeremias.alcantara.902?locale=es_LA" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a class="social-icon" href="https://www.instagram.com/jrmsav/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a class="social-icon" href="https://www.youtube.com/@JeremiasAlcantara-b4w" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+    </div>    
+    </header>
+    
+    <main class="main-content" id="content">
+        <!--contenedor 1-->
+        <div id="mainContainer" style="display: block;">
+            <h1>Javy Sorts</h1>
+            <img src="LogoBody.png" alt="Logo Body" class="body-logo">
+            <button class="body-button" onclick="showSection('createListContainer')"><i class="fas fa-tasks"></i> Crear nueva lista</button>
+        </div>
+
+        <!--Crear listas-->
+        <div id="createListContainer">
+            <h2 class="sizeletrasCLC">Crear Nueva Lista</h2>
+            <label for="listName" sizeletrasonlyc2">Nombre de la Lista:</label>
+            <input type="text" id="listName" placeholder="Ingresa el nombre de la lista" class="body-input">
+            <button class="add-button" id="Asignar"  onclick="createList()">
+                <i class="fas fa-file-alt"></i> Crear
+            </button>
+        
+            <!-- Botón para marcar la acción como "Hecho" -->
+            <button class="body-button" id="create" onclick="showSection('listContainer')"><i class="fas fa-sync-alt"></i> Actualizar y listas Creadas</button>
+        
+            <!-- Contenedores de la lista y productos sugeridos dentro de este contenedor -->
+            <div class="main-container">
+                <!-- Contenedor grande a la izquierda para la lista -->
+                <div class="lista-container">
+                    <h2 id="listTitle">Nueva lista</h2>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <div class="icon-container">
+                        <input type="text" id="searchInput" placeholder="Buscar en la lista" style="visibility: hidden;" onkeyup="searchInList()">
+                        <i class="fas fa-search" id="searchIcon" onclick="toggleSearch()"></i> <!-- Ícono de lupa -->
+                        <i class="fas fa-share-alt"></i> <!-- Ícono de compartir -->
+                        <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
+                        <i class="fas fa-print"></i> <!-- Ícono de imprimir -->
+                    </div>
+                    
+                    <div class="imageANDproducts-container">
+                        <img src="CrearListas.jpg" alt="Imagen Crear Listas" class="centered-image">
+                    </div>
+                </div>
+        
+                <!-- Contenedor más pequeño a la derecha para agregar productos -->
+                <div class="contenedor-grande">
+                    <h2>Agregar productos</h2>
+                    <div>
+                        <input type="text" id="AskProduct" placeholder="Buscar producto" onkeyup="searchProducts()">
+                        <button id="lupa" onclick="AskAprod()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="productos-container">
+                        <ul class="producto-lista">
+                            <li><i class="fas fa-plus-circle"></i> Manzana</li>
+                            <li><i class="fas fa-plus-circle"></i> Leche</li>
+                            <li><i class="fas fa-plus-circle"></i> Pan Integral</li>
+                            <li><i class="fas fa-plus-circle"></i> Pasta</li>
+                            <li><i class="fas fa-plus-circle"></i> Huevos</li>
+                            <li><i class="fas fa-plus-circle"></i> Carne de res</li>
+                            <li><i class="fas fa-plus-circle"></i> Zanahoria</li>
+                            <li><i class="fas fa-plus-circle"></i> Queso</li>
+                            <li><i class="fas fa-plus-circle"></i> Arroz</li>
+                            <li><i class="fas fa-plus-circle"></i> Tomate</li>
+                            <li><i class="fas fa-plus-circle"></i> Pollo</li>
+                            <li><i class="fas fa-plus-circle"></i> Jugo de naranja</li>
+                            <li><i class="fas fa-plus-circle"></i> Yogur</li>
+                            <li><i class="fas fa-plus-circle"></i> Lechuga</li>
+                            <li><i class="fas fa-plus-circle"></i> Cereal</li>
+                            <li><i class="fas fa-plus-circle"></i> Atún enlatado</li>
+                            <li><i class="fas fa-plus-circle"></i> Banana</li>
+                            <li><i class="fas fa-plus-circle"></i> Café</li>
+                            <li><i class="fas fa-plus-circle"></i> Salchichas</li>
+                            <li><i class="fas fa-plus-circle"></i> Galletas</li>
+                            <li><i class="fas fa-plus-circle"></i> Pimiento</li>
+                            <li><i class="fas fa-plus-circle"></i> Detergente</li>
+                            <li><i class="fas fa-plus-circle"></i> Harina</li>
+                            <li><i class="fas fa-plus-circle"></i> Jabón</li>
+                            <li><i class="fas fa-plus-circle"></i> Aceite de oliva</li>
+                            <li><i class="fas fa-plus-circle"></i> Pepino</li>
+                            <li><i class="fas fa-plus-circle"></i> Cebolla</li>
+                            <li><i class="fas fa-plus-circle"></i> Helado</li>
+                            <li><i class="fas fa-plus-circle"></i> Mermelada</li>
+                            <li><i class="fas fa-plus-circle"></i> Frijoles</li>
+                            <li><i class="fas fa-plus-circle"></i> Sal</li>
+                            <li><i class="fas fa-plus-circle"></i> Queso crema</li>
+                            <li><i class="fas fa-plus-circle"></i> Pepperoni</li>
+                            <li><i class="fas fa-plus-circle"></i> Avena</li>
+                            <li><i class="fas fa-plus-circle"></i> Chocolate</li>
+                            <li><i class="fas fa-plus-circle"></i> Refresco</li>
+                            <li><i class="fas fa-plus-circle"></i> Cerveza</li>
+                            <li><i class="fas fa-plus-circle"></i> Puré de papa</li>
+                            <li><i class="fas fa-plus-circle"></i> Espinaca</li>
+                            <li><i class="fas fa-plus-circle"></i> Chips</li>
+                            <li><i class="fas fa-plus-circle"></i> Pescado</li>
+                            <li><i class="fas fa-plus-circle"></i> Salsa de tomate</li>
+                            <li><i class="fas fa-plus-circle"></i> Agua embotellada</li>
+                            <li><i class="fas fa-plus-circle"></i> Jamón</li>
+                            <li><i class="fas fa-plus-circle"></i> Yuca</li>
+                            <li><i class="fas fa-plus-circle"></i> Champiñones</li>
+                            <li><i class="fas fa-plus-circle"></i> Mayonesa</li>
+                            <li><i class="fas fa-plus-circle"></i> Uvas</li>
+                            <li><i class="fas fa-plus-circle"></i> Salmón</li>
+                            <li><i class="fas fa-plus-circle"></i> Mantequilla</li>
+                            <li><i class="fas fa-plus-circle"></i> Zumo de piña</li>
+                            <li><i class="fas fa-plus-circle"></i> Té</li>
+                            <li><i class="fas fa-plus-circle"></i> Camarones</li>
+                            <li><i class="fas fa-plus-circle"></i> Pizza congelada</li>
+                            <li><i class="fas fa-plus-circle"></i> Croissants</li>
+                            <li><i class="fas fa-plus-circle"></i> Espaguetis</li>
+                            <li><i class="fas fa-plus-circle"></i> Ajo</li>
+                            <li><i class="fas fa-plus-circle"></i> Miel</li>
+                            <li><i class="fas fa-plus-circle"></i> Nueces</li>
+                            <li><i class="fas fa-plus-circle"></i> Guisantes</li>
+                            <li><i class="fas fa-plus-circle"></i> Tortillas</li>
+                            <li><i class="fas fa-plus-circle"></i> Cebollín</li>
+                            <li><i class="fas fa-plus-circle"></i> Chorizo</li>
+                            
+                            <li><i class="fas fa-plus-circle"></i> Almendras</li>
+                            <li><i class="fas fa-plus-circle"></i> Hojas de laurel</li>
+                            <li><i class="fas fa-plus-circle"></i> Vinagre</li>
+                            <li><i class="fas fa-plus-circle"></i> Filete de cerdo</li>
+                            <li><i class="fas fa-plus-circle"></i> Gelatina</li>
+                            <li><i class="fas fa-plus-circle"></i> Coliflor</li>
+                            <li><i class="fas fa-plus-circle"></i> Queso rallado</li>
+                            <li><i class="fas fa-plus-circle"></i> Jengibre</li>
+                            <li><i class="fas fa-plus-circle"></i> Papas fritas congeladas</li>
+                            <li><i class="fas fa-plus-circle"></i> Tortilla de maíz</li>
+                            <li><i class="fas fa-plus-circle"></i> Brocoli</li>
+                            <li><i class="fas fa-plus-circle"></i> Cebada</li>
+                            <li><i class="fas fa-plus-circle"></i> Mostaza</li>
+                            <li><i class="fas fa-plus-circle"></i> Salsa barbacoa</li>
+                            <li><i class="fas fa-plus-circle"></i> Queso cottage</li>
+                            <li><i class="fas fa-plus-circle"></i> Pavo</li>
+                            <li><i class="fas fa-plus-circle"></i> Patatas</li>
+                            <li><i class="fas fa-plus-circle"></i> Alcachofas</li>
+                            <li><i class="fas fa-plus-circle"></i> Espárragos</li>
+                            <li><i class="fas fa-plus-circle"></i> Calabacín</li>
+                            <li><i class="fas fa-plus-circle"></i> Sandía</li>
+                            <li><i class="fas fa-plus-circle"></i> Acelga</li>
+                            <li><i class="fas fa-plus-circle"></i> Tofu</li>
+                            <li><i class="fas fa-plus-circle"></i> Tacos</li>
+                            <li><i class="fas fa-plus-circle"></i> Palomitas</li>
+                            <li><i class="fas fa-plus-circle"></i> Cerezas</li>
+                            <li><i class="fas fa-plus-circle"></i> Pasta integral</li>
+                            <li><i class="fas fa-plus-circle"></i> Manteca de maní</li>
+                            <li><i class="fas fa-plus-circle"></i> Pera</li>
+                            <li><i class="fas fa-plus-circle"></i> Harina de maíz</li>
+                            <li><i class="fas fa-plus-circle"></i> Leche condensada</li>
+                           
+                            <li><i class="fas fa-plus-circle"></i> Polenta</li>
+                            <li><i class="fas fa-plus-circle"></i> Caldo de pollo</li>
+                            <li><i class="fas fa-plus-circle"></i> Anchoas</li>
+                            <li><i class="fas fa-plus-circle"></i> Fideos instantáneos</li>
+                            <li><i class="fas fa-plus-circle"></i> Couscous</li>
+                            <li><i class="fas fa-plus-circle"></i> Coles de Bruselas</li>
+                            <li><i class="fas fa-plus-circle"></i> Remolacha</li>
+                            <li><i class="fas fa-plus-circle"></i> Kiwi</li>
+                            <li><i class="fas fa-plus-circle"></i> Pimientos jalapeños</li>
+                            <li><i class="fas fa-plus-circle"></i> Yogur griego</li>
+                            <li><i class="fas fa-plus-circle"></i> Pistachos</li>
+                            <li><i class="fas fa-plus-circle"></i> Queso feta</li>
+                            <li><i class="fas fa-plus-circle"></i> Salsa de soja</li>
+                            <li><i class="fas fa-plus-circle"></i> Tortellini</li>
+                            <li><i class="fas fa-plus-circle"></i> Cangrejo</li>
+                            <li><i class="fas fa-plus-circle"></i> Pan rallado</li>
+                            <li><i class="fas fa-plus-circle"></i> Crema agria</li>
+                            <li><i class="fas fa-plus-circle"></i> Hummus</li>
+                            <li><i class="fas fa-plus-circle"></i> Naranjas</li>
+                            <li><i class="fas fa-plus-circle"></i> Azúcar</li>
+                            <li><i class="fas fa-plus-circle"></i> Crema de leche</li>
+                            <li><i class="fas fa-plus-circle"></i> Salsa tabasco</li>
+                            <li><i class="fas fa-plus-circle"></i> Nachos</li>
+                            <li><i class="fas fa-plus-circle"></i> Fresas</li>
+                            <li><i class="fas fa-plus-circle"></i> Higos</li>
+                            <li><i class="fas fa-plus-circle"></i> Ciruelas</li>
+                            <li><i class="fas fa-plus-circle"></i> Pescado congelado</li>
+                            <li><i class="fas fa-plus-circle"></i> Bacalao</li>
+                            <li><i class="fas fa-plus-circle"></i> Sardinas</li>
+                            <li><i class="fas fa-plus-circle"></i> Papaya</li>
+                            <li><i class="fas fa-plus-circle"></i> Mango</li>
+                            
+                            <li><i class="fas fa-plus-circle"></i> Piña</li>
+                            <li><i class="fas fa-plus-circle"></i> Ajo en polvo</li>
+                            <li><i class="fas fa-plus-circle"></i> Orégano</li>
+                            <li><i class="fas fa-plus-circle"></i> Pimienta negra</li>
+                            <li><i class="fas fa-plus-circle"></i> Clavo de olor</li>
+                            <li><i class="fas fa-plus-circle"></i> Cúrcuma</li>
+                            <li><i class="fas fa-plus-circle"></i> Pimentón</li>
+                            <li><i class="fas fa-plus-circle"></i> Ensalada mixta</li>
+                            <li><i class="fas fa-plus-circle"></i> Salsa ranch</li>
+                            <li><i class="fas fa-plus-circle"></i> Pasta de curry</li>
+                            <li><i class="fas fa-plus-circle"></i> Albahaca</li>
+                            <li><i class="fas fa-plus-circle"></i> Alcaparras</li>
+                            <li><i class="fas fa-plus-circle"></i> Merluza</li>
+                            <li><i class="fas fa-plus-circle"></i> Pan sin gluten</li>
+                            <li><i class="fas fa-plus-circle"></i> Galletas de arroz</li>
+                            <li><i class="fas fa-plus-circle"></i> Harina de avena</li>
+                            <li><i class="fas fa-plus-circle"></i> Mantequilla de almendras</li>
+                            <li><i class="fas fa-plus-circle"></i> Levadura</li>
+                            <li><i class="fas fa-plus-circle"></i> Espaguetis de calabacín</li>
+                            <li><i class="fas fa-plus-circle"></i> Caviar</li>
+                            <li><i class="fas fa-plus-circle"></i> Salsa Alfredo</li>
+                            <li><i class="fas fa-plus-circle"></i> Salsa teriyaki</li>
+                            <li><i class="fas fa-plus-circle"></i> Jugo de uva</li>
+                            <li><i class="fas fa-plus-circle"></i> Miso</li>
+                            <li><i class="fas fa-plus-circle"></i> Garbanzos</li>
+                            <li><i class="fas fa-plus-circle"></i> Mazapán</li>
+                            <li><i class="fas fa-plus-circle"></i> Salmón ahumado</li>
+                            <li><i class="fas fa-plus-circle"></i> Caldo de verduras</li>
+                            <li><i class="fas fa-plus-circle"></i> Melocotones</li>
+                            <li><i class="fas fa-plus-circle"></i> Turrón</li>
+                            <li><i class="fas fa-plus-circle"></i> Pesto</li>
+                            
+                            <li><i class="fas fa-plus-circle"></i> Tortellini de espinaca</li>
+                            <li><i class="fas fa-plus-circle"></i> Paella congelada</li>
+                            <li><i class="fas fa-plus-circle"></i> Filete de salmón</li>
+                            <li><i class="fas fa-plus-circle"></i> Uvas pasas</li>
+                            <li><i class="fas fa-plus-circle"></i> Sopa de pollo enlatada</li>
+                            <li><i class="fas fa-plus-circle"></i> Palomitas de maíz</li>
+                            <li><i class="fas fa-plus-circle"></i> Bolsa de papas fritas</li>
+                            <li><i class="fas fa-plus-circle"></i> Chicles</li>
+                            <li><i class="fas fa-plus-circle"></i> Pastillas de menta</li>
+                            <li><i class="fas fa-plus-circle"></i> Agua con gas</li>
+                            <li><i class="fas fa-plus-circle"></i> Caramelo</li>
+                            <li><i class="fas fa-plus-circle"></i> Sopa instantánea</li>
+                            <li><i class="fas fa-plus-circle"></i> Crema agria</li>
+                            <li><i class="fas fa-plus-circle"></i> Batata</li>
+                            <li><i class="fas fa-plus-circle"></i> Flan</li>
+                            <li><i class="fas fa-plus-circle"></i> Rábano</li>
+                            <li><i class="fas fa-plus-circle"></i> Crema dental</li>
+                            <li><i class="fas fa-plus-circle"></i> Goma de mascar</li>
+                            <li><i class="fas fa-plus-circle"></i> Col lombarda</li>
+                            <li><i class="fas fa-plus-circle"></i> Melocotones</li>
+                            <li><i class="fas fa-plus-circle"></i> Perejil seco</li>
+                            <li><i class="fas fa-plus-circle"></i> Alcaparras</li>
+                            <li><i class="fas fa-plus-circle"></i> Mazapán</li>
+                            <li><i class="fas fa-plus-circle"></i> Pipas de girasol</li>
+                            <li><i class="fas fa-plus-circle"></i> Salsa de soja</li>
+                            <li><i class="fas fa-plus-circle"></i> Ramen</li>
+                            <li><i class="fas fa-plus-circle"></i> Algas marinas</li>
+                            <li><i class="fas fa-plus-circle"></i> Leche sin lactosa</li>
+                            <li><i class="fas fa-plus-circle"></i> Queso azul</li>
+                            <li><i class="fas fa-plus-circle"></i> Piernas de pollo</li>
+                            <li><i class="fas fa-plus-circle"></i> Cubitos de caldo</li>
+                            
+                            <li><i class="fas fa-plus-circle"></i> Conservas de verduras</li>
+                            <li><i class="fas fa-plus-circle"></i> Cebolla en polvo</li>
+                            <li><i class="fas fa-plus-circle"></i> Pan rallado</li>
+                            <li><i class="fas fa-plus-circle"></i> Chocolate amargo</li>
+                            <li><i class="fas fa-plus-circle"></i> Pasas</li>
+                            <li><i class="fas fa-plus-circle"></i> Granola</li>
+                            <li><i class="fas fa-plus-circle"></i> Avena en hojuelas</li>
+                            <li><i class="fas fa-plus-circle"></i> Carne para guisar</li>
+                            <li><i class="fas fa-plus-circle"></i> Chocolate para derretir</li>
+                            <li><i class="fas fa-plus-circle"></i> Manteca vegetal</li>
+                            <li><i class="fas fa-plus-circle"></i> Barritas de cereales</li>
+                            <li><i class="fas fa-plus-circle"></i> Muesli</li>
+                            <li><i class="fas fa-plus-circle"></i> Cuscús</li>
+                            <li><i class="fas fa-plus-circle"></i> Higos</li>
+                            <li><i class="fas fa-plus-circle"></i> Ciruelas</li>
+                            <li><i class="fas fa-plus-circle"></i> Papaya</li>
+                            <li><i class="fas fa-plus-circle"></i> Melón</li>
+                            <li><i class="fas fa-plus-circle"></i> Coco rallado</li>
+                            <li><i class="fas fa-plus-circle"></i> Semillas de chía</li>
+                            <li><i class="fas fa-plus-circle"></i> Semillas de lino</li>
+                            <li><i class="fas fa-plus-circle"></i> Semillas de calabaza</li>
+                            <li><i class="fas fa-plus-circle"></i> Proteína en polvo</li>
+                            <li><i class="fas fa-plus-circle"></i> Curry en polvo</li>
+                            <li><i class="fas fa-plus-circle"></i> Estragón</li>
+                            <li><i class="fas fa-plus-circle"></i> Romero</li>
+                            <li><i class="fas fa-plus-circle"></i> Tomillo</li>
+                            <li><i class="fas fa-plus-circle"></i> Cúrcuma</li>
+                            <li><i class="fas fa-plus-circle"></i> Comino</li>
+                            <li><i class="fas fa-plus-circle"></i> Pimienta negra</li>
+                            <li><i class="fas fa-plus-circle"></i> Pimienta blanca</li>
+                            <li><i class="fas fa-plus-circle"></i> Canela</li>
+                            
+                            <li><i class="fas fa-plus-circle"></i> Clavos de olor</li>
+                            <li><i class="fas fa-plus-circle"></i> Nuez moscada</li>
+                            <li><i class="fas fa-plus-circle"></i> Especias para barbacoa</li>
+                            <li><i class="fas fa-plus-circle"></i> Orégano</li>
+                            <li><i class="fas fa-plus-circle"></i> Aceitunas verdes</li>
+                            <li><i class="fas fa-plus-circle"></i> Maíz enlatado</li>
+                            <li><i class="fas fa-plus-circle"></i> Guisantes enlatados</li>
+                            <li><i class="fas fa-plus-circle"></i> Palmito</li>
+                            <li><i class="fas fa-plus-circle"></i> Remolacha</li>
+                            <li><i class="fas fa-plus-circle"></i> Espinacas congeladas</li>
+                            <li><i class="fas fa-plus-circle"></i> Champiñones enlatados</li>
+                            <li><i class="fas fa-plus-circle"></i> Piña en almíbar</li>
+                            <li><i class="fas fa-plus-circle"></i> Cerezas</li>
+                            <li><i class="fas fa-plus-circle"></i> Frambuesas</li>
+                            <li><i class="fas fa-plus-circle"></i> Moras</li>
+                            <li><i class="fas fa-plus-circle"></i> Arándanos</li>
+                            <li><i class="fas fa-plus-circle"></i> Mango</li>
+                            <li><i class="fas fa-plus-circle"></i> Kiwis</li>
+                            <li><i class="fas fa-plus-circle"></i> Caquis</li>
+                            <li><i class="fas fa-plus-circle"></i> Aguacate</li>
+                            <li><i class="fas fa-plus-circle"></i> Duraznos enlatados</li>
+                            <li><i class="fas fa-plus-circle"></i> Mermelada de fresa</li>
+                            <li><i class="fas fa-plus-circle"></i> Mermelada de durazno</li>
+                            <li><i class="fas fa-plus-circle"></i> Mermelada de naranja</li>
+                            <li><i class="fas fa-plus-circle"></i> Mermelada de frambuesa</li>
+                            <li><i class="fas fa-plus-circle"></i> Frutas secas</li>
+                            <li><i class="fas fa-plus-circle"></i> Polen de abeja</li>
+                            <li><i class="fas fa-plus-circle"></i> Leche de almendra</li>
+                            <li><i class="fas fa-plus-circle"></i> Leche de soja</li>
+                            <li><i class="fas fa-plus-circle"></i> Leche de coco</li>
+                            <li><i class="fas fa-plus-circle"></i> Leche de avena</li>
+                            
+                            <li><i class="fas fa-plus-circle"></i> Leche de arroz</li>
+                            <li><i class="fas fa-plus-circle"></i> Bebida de avena</li>
+                            <li><i class="fas fa-plus-circle"></i> Té verde</li>
+                            <li><i class="fas fa-plus-circle"></i> Té negro</li>
+                            <li><i class="fas fa-plus-circle"></i> Té de manzanilla</li>
+                            <li><i class="fas fa-plus-circle"></i> Té de jengibre</li>
+                            <li><i class="fas fa-plus-circle"></i> Jugo de tomate</li>
+                            <li><i class="fas fa-plus-circle"></i> Jugo de manzana</li>
+                            <li><i class="fas fa-plus-circle"></i> Jugo de arándano</li>
+                            <li><i class="fas fa-plus-circle"></i> Jugo de zanahoria</li>
+                            <li><i class="fas fa-plus-circle"></i> Batido de frutas</li>
+                            <li><i class="fas fa-plus-circle"></i> Refresco de cola</li>
+                            <li><i class="fas fa-plus-circle"></i> Refresco de limón</li>
+                            <li><i class="fas fa-plus-circle"></i> Agua saborizada</li>
+                            <li><i class="fas fa-plus-circle"></i> Licor de café</li>
+                            <li><i class="fas fa-plus-circle"></i> Whisky</li>
+                            <li><i class="fas fa-plus-circle"></i> Vodka</li>
+                            <li><i class="fas fa-plus-circle"></i> Ron</li>
+                            <li><i class="fas fa-plus-circle"></i> Ginebra</li>
+                            <li><i class="fas fa-plus-circle"></i> Cerveza artesanal</li>
+                            <li><i class="fas fa-plus-circle"></i> Sidra</li>
+                            <li><i class="fas fa-plus-circle"></i> Sake</li>
+                            <li><i class="fas fa-plus-circle"></i> Champaña</li>
+                            <li><i class="fas fa-plus-circle"></i> Vino blanco</li>
+                            <li><i class="fas fa-plus-circle"></i> Vino tinto</li>
+                            <li><i class="fas fa-plus-circle"></i> Cava</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Donde se almacenan las listas-->
+        <div id="listContainer">
+            <h2 class="sizeletrasc2c3">Listas Creadas</h2>
+            <button class="body-button" onclick="showSection('createListContainer')">
+                <i class="fas fa-tasks"></i> Crear nueva Lista
+            </button>
+            <img src="ListasCreadas.jpg" alt="CrearLTS" class="body-logo" id="listContainerImage">
+            <div id="savedLists"></div>
+        </div>
+        
+        <div id="TrashSec">
+            <h2 class="sizeletrasc2c3">Papelera</h2>
+            <div>
+                <img src="Trash.jpg" alt="Imagen de Iniciar Sesión" class="body-logo">
+            </div>
+        </div>
+
+        <div id="helpSection">
+            <h1>Javy Sorts</h1>
+            <p>info. ver 3/6</p>
+            <p>Javy Sorts es una página de listar productos de supermercados, orientado a productos de consumo humano. Si vas a ir al supermercado y necesitas comprar una serie de productos necesitas hacer una lista para que no se te olvide, Javy Sorts te ayuda en esa parte. Entras a la página, escoges tus productos y los organizas debidamente.</p>
+        
+            <div class="section-divider"></div>
+        
+            <h2>Características principales:</h2>
+            <ol>
+                <li><strong>Temática:</strong> La temática de la página es que el dueño de ella, Javy, te ceda un poco de su obra para que se te haga la vida un poco más simple. En cada apartado de la página está Javy, donde él te dice lo que hay ahí.</li>
+        
+                <li><strong>Título:</strong> El título de la página es el nombre de su dueño, Javy el lobo. Su nombre viene de mis tres iniciales y la "y" para complementar, y "Sort" porque él ordena listas.</li>
+        
+                <li><strong>Paleta de colores:</strong> Se buscó una paleta de colores suave a la vista. Se utilizan 5 tonos de azules: para el Body, Header, botones y letras, Hover de botones en las letras, los + de agregar y un azul oscuro para los Hover en general.</li>
+        
+                <li><strong>Tipografía:</strong> Se utilizaron diseños de letras de Google Fonts que van acorde con lo animado y simple. Una fuente para el título y otra para los textos.</li>
+        
+                <li><strong>Forma de la página:</strong> Fue inspirada en la página Listonic, principalmente en la disposición del header y el apartado de agregar productos.</li>
+        
+                <li><strong>Imágenes y botones:</strong> Las imágenes que tiene son de Javy y los botones son normales con bordes redondeados para un diseño menos cuadrado.</li>
+        
+                <li><strong>Secciones:</strong> Tiene un apartado principal donde Javy te da la bienvenida, el segundo apartado donde creas tus listas, el tercer contenedor para almacenar las listas guardadas. También tiene apartados de ajustes, iniciar sesión y otra información de la página.</li>
+            </ol>
+        
+            <div class="section-divider"></div>
+        
+            <p>La página es fácil de entender, actualmente solo tiene diseño web. Se le agregarán algunos detalles más de diseño y múltiples funcionalidades en el futuro.</p>
+        </div>
+
+
+        <!-- FORMULARIO DE DETALLES-->
+        
+        <div id="formContainer">
+            <form id="detailsForm" class="details-container">
+              <h2>Detalles</h2>
+        
+              <div class="form-group">
+                <label for="category">Categoría</label>
+                <select id="category">
+                  <option value="alimentacion">Alimentación</option>
+                  <option value="electrodomesticos">Electrodomésticos</option>
+                  <option value="ropa">Ropa</option>
+                  <option value="juguetes">Juguetes</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+        
+              <div class="flex-container">
+                <div class="flex-item">
+                  <label for="amount">Cantidad</label>
+                  <input id="amount" type="number" placeholder="e.g. 2">
+                </div>
+                <div class="flex-item">
+                  <label for="unit">Unidad</label>
+                  <input id="unit" type="text" placeholder="e.g. kg">
+                </div>
+              </div>
+        
+              <div class="form-group">
+                <label for="price">Precio</label>
+                <input id="price" type="number" step="0.01" placeholder="e.g. 3.99">
+              </div>
+        
+              <div class="form-group">
+                <label for="description">Descripción</label>
+                <textarea id="description" rows="4" placeholder="Ingrese una descripción del producto"></textarea>
+              </div>
+        
+              <button type="button" id="closeFormButton" onclick="showSection('createListContainer')">Cerrar</button>
+            </form>
+          </div>
+
+    </main>
+    </main>
+</body>
+</html>

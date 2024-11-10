@@ -1,0 +1,423 @@
+21. Aplicación de lista de compras
+• Parte 1: Creación de lista de compras con HTML y CSS (25 puntos)
+• Parte 2: Añadir y eliminar elementos con JavaScript (30 puntos)
+• Parte 3: Backend para almacenar listas y compartirlas entre usuarios (45 puntos)
+
+Tipo de pagina: Lista de compras
+Título:Javy Sorts
+"Hola, Soy Javy! Te proporciono mi herramienta para que organices tus compras :)"
+Posibles paletas de colores: Naranja, Gris, Blanco / Azul Marino, Azul Claro
+
+Colores
+1)
+#00ffff o #a0c6ff
+#002659 o #031d5e o #001750
+
+2)
+#ff6800
+#c2c2c2
+#FFFFFF
+
+3)
+#117656
+114a76
+claros
+c8ffee
+b2deff
+00ff81
+117660
+
+LA PALETA DE COLORES UTILIZADA FUE LA N3.
+ 
+FUNCIONES QUE TIENE QUE TENER LA PAGINA. 
+
+BOTON DE CREAR NUEVA LISTA: AL PULSAR ESE BOTON TIENE QUE APARECER UN CUADRO PARA PONER EL NOMBRE DE LA LISTA,
+CUANDO SE LE DE A CREAR TIENE QUE MANDARTE A UN APARTADO DIFERENTE, ESTE APPARTADO TENDRÁ EL NOMBRE DE LA LISTA, Y UNA IMAGEN CENTRAL
+Y ABAJO UN BOTON QUE DIRA "AÑADIR PRODUCTO".
+CUANDO SE SELECCIONE ESTE BOTTON TE MANDARA A OTRO APARTADO, DONDE TENDRÁ LA LISTA DE PRODUCTOS, MIENTAS SE SELECCIONEN SE IRAN 
+AGREGANDO A UN CUADRO EN ESE MISMO APARTADO.
+EN ESE APARTADO HABRÁ UN BOTON DE "HECHO" QUE CUANDO LE PULSES LUEGO DE HACER TU LISTA TE ENVIARÁ A UN APARTADO CON  ESA LISTA YA 
+HECHA, ESE APARTADO TENDRA EL MISMO BOTON QUE LA PAGINA PRINCIPAL PARA HACER OTRA LISTA.
+
+
+OTRAS FUNCIONES:
+CADA CUADRO ENTRA UN MENU DE OPCIONES PARA BORRAR LAS LISTAS.
+TENDRA UNA PAPELERA QUE ALMACENA LOS PRODUCTOS ELIMINADOS.
+MIENTRAS SE ESTEN AGREGANDO PRODUCTO SE PODRAN IR REMOVIENDO.
+
+CONTENEDORES DE LA PAGINA:
+
+- CONTENEDOR PRINCIPAL
+- EL BOTON DE CREAR NUEVA LISTA (QUE ESTARÁ EN EL CONTENEDOR PRINCIPAL) TE MANDARÁ AL CONTENEDOR 
+DE CREAR LA LISTA (PONERLE EL NOMBRE Y AGREGAR PRODUCTOS (TENBIEN TENDRÁ LOS PRODUCTOS LISTOR PARA SELECCIONAR))
+EL CONTENEDOR DE CRAR LISTA TENDRA UN BOTON DE HECHO QUE TE ENVIARÁ HACIA EL PROXICO CONTENEDOR QUE GUARDA DOTAS LAS LISTAS QUE CREARAS
+QUIERO QUE LA PAGINA JUEGUE ENTRE ESTAS TRES INTERFACES PRINCIPALES.
+
+CREA LA CONEXION ENTRE ESTAS INTERFACES, COMO SOLO TENGO LA PRINCIPALCREA LAS OTRA PERO DEJALAS EN BLANCO, SOLO CREA LOS BOTONES
+PARA LAS CONEXIONES
+
+YA HECHO: 19 - 21/9
+GENERAR LA INTERFAZ, TEMA DE COLOR, TITULO DE LA PAGINA, LOGO, LEMA
+BUSCAR PAGINAS PARA TENER IDEAS
+IMPLEMENTACION DEL DESEÑO DE LA PAGINA PRINCIPAL
+INVESTIGACION PARA FUTURAS FUNCIONES
+
+PARA MAÑANA: 22/9
+ENTENDER Y MODIFICAR CODIGO
+CONECTAR JS
+AGREGAR OTROS BOTONES A LOS CONTENEDORES (EL QUE HARA POSIBLE LA APARICION DE LOS CUADROS DE AGREGAR)
+
+PARA DESPUES: 28-29/9
+DOS CUADROS: DE AGREGAR PRODUCTOS EN EL SEGUNDO CONTENEDOR
+1 EL QUE RECIBE LOS PRODUCTOS
+2 EL QUE QUE TIENE LOS PRODUCTOS PARA AGREGAR
+CSS A LOS CONTENEDORES RESTANTES
+
+PENDIENTE:
+ARREGLAR LOS ICONOS
+DESCENTRAR LOS TEXTOS DE LOS BOTONES Y PONERLE ICONOS
+CSS CORRESPONDIENTE
+
+PARA DES[UES:
+PONERLE LAS IMAGENES DESDE LA NUBE EN VEZ DEL DISCO DE LA PC
+iCONO A CIERTOS BOTONES
+
+
+#RETOQUES HASTA PRESENTACION DE LA PAGINA
+
+PARA DESPUES:
+INGRESAR LOS PRODUCTOS A SELECCIONAR CON API
+IMPLEMENTAR FUNCION DE QUE SE AGREGUEN
+
+
+PARA DESPUES:
+HACER QUE LOS CUADROS APAREZCAN CON EL BOTON DE ACEPTAR
+HACER QUE LAS LISTAS CREADAS SE AGREGUEN AL TERCER CONTENEDOR POR MEDIO DEL BOTON HECHO
+
+#CREACION DE LA PAPELERA
+
+PARA DESPUES:
+OPCION DE ELIMINAR PRODUCTOS DE LAS LISTAS EN CREACION
+OPCION DE ELIMINAR LISTAS COMPLETAS EN EL TERCER CONTENEDOR
+
+LUEGO:
+HACER QUE LAS LISTAS CREADAS SE VEAN EN FORMA DE CUADRO
+QUE CADA LISTA DE ESAS TE LLEVE A EDITARLAS
+QUE SE PUEDAN MODIFICAR LOS CAMBIOS
+
+LUEGO:
+AL HACER CLICK A CADA UNO DE LOS PRODUCTOS AGRA¿EGADOS SE ABRE UNA VENTANA PARA AGREGAR DESCRIPCIOO, PRECIO, CATEGORIA ETC.
+
+FINAL:
+QUE SE GUARDE TODO
+COMPARTIR LISTAS ENTRE USUARIOS
+
+ADICIONALES 1: CREACION DE BOTON DE INICIO DE SESION, LINK A REDES SOCIALES
+FUNCIONES
+
+AD 2:
+BUSCAR PRODUCTO POR LUPA
+AGREGAR TU PROPIO PRODUCTO SIN QUE ESTE EN LA LISTA
+
+AD 3:
+AGREGAR IMAGENES A LOS PRODUCTOS DE PARTE DEL USUARIO
+
+AD 4:
+IMPRIMIR LISTA
+
+AS 5: PUBLICAR
+
+ 
+
+
+			<li>Carne de res</li>
+                        <li>Zanahoria</li>
+                        <li>Queso</li>
+                        <li>Arroz</li>
+                        <li>Tomate</li>
+                        <li>Pollo</li>
+                        <li>Jugo de naranja</li>
+                        <li>Yogur</li>
+                        <li>Lechuga</li>
+                        <li>Cereal</li>
+                        <li>Atún enlatado</li>
+                        <li>Banana</li>
+                        <li>Café</li>
+                        <li>Salchichas</li>
+                        <li>Galletas</li>
+                        <li>Pimiento</li>
+                        <li>Detergente</li>
+                        <li>Harina</li>
+                        <li>Jabón</li>
+                        <li>Aceite de oliva</li>
+                        <li>Pepino</li>
+                        <li>Cebolla</li>
+                        <li>Helado</li>
+                        <li>Mermelada</li>
+                        <li>Frijoles</li>
+                        <li>Sal</li>
+                        <li>Pepperoni</li>
+                        <li>Avena</li>
+                        <li>Chocolate</li>
+                        <li>Refresco</li>
+                        <li>Cerveza</li>
+                        <li>Puré de papa</li>
+                        <li>Espinaca</li>
+                        <li>Chips</li>
+                        <li>Pescado</li>
+                        <li>Salsa de tomate</li>
+                        <li>Agua embotellada</li>
+                        <li>Jamón</li>
+                        <li>Yuca</li>
+                        <li>Champiñones</li>
+                        <li>Mayonesa</li>
+                        <li>Uvas</li>
+                        <li>Salmón</li>
+                        <li>Mantequilla</li>
+                        <li>Zumo de piña</li>
+                        <li>Té</li>
+                        <li>Camarones</li>
+                        <li>Pizza congelada</li>
+                        <li>Croissants</li>
+                        <li>Espaguetis</li>
+                        <li>Ajo</li>
+                        <li>Miel</li>
+                        <li>Nueces</li>
+                        <li>Guisantes</li>
+                        <li>Tortillas</li>
+                        <li>Cebollín</li>
+                        <li>Chorizo</li>
+                        <li>Almendras</li>
+                        <li>Hojas de laurel</li>
+                        <li>Vinagre</li>
+                        <li>Filete de cerdo</li>
+                        <li>Gelatina</li>
+                        <li>Coliflor</li>
+                        <li>Queso rallado</li>
+                        <li>Jengibre</li>
+                        <li>Papas fritas congeladas</li>
+                        <li>Azúcar</li>
+                        <li>Avena instantánea</li>
+                        <li>Albahaca</li>
+                        <li>Carne molida</li>
+                        <li>Pepinillos</li>
+                        <li>Harina de maíz</li>
+                        <li>Pizza fresca</li>
+                        <li>Puerro</li>
+                        <li>Alcachofa</li>
+                        <li>Garbanzos</li>
+                        <li>Puré de manzana</li>
+                        <li>Sardinas enlatadas</li>
+                        <li>Gel antibacterial</li>
+                        <li>Crema de leche</li>
+                        <li>Tocino</li>
+                        <li>Galletas saladas</li>
+                        <li>Vino tinto</li>
+                        <li>Champú</li>
+                        <li>Galletas de chocolate</li>
+                        <li>Mostaza</li>
+                        <li>Patatas</li>
+                        <li>Espárragos</li>
+                        <li>Carne de cordero</li>
+                        <li>Frutos secos</li>
+                        <li>Jabón líquido</li>
+                        <li>Ensalada mixta</li>
+                        <li>Toallitas húmedas</li>
+                        <li>Maní</li>
+                        <li>Aceitunas</li>
+                        <li>Harina de trigo</li>
+                        <li>Cornflakes</li>
+                        <li>Cereal de avena</li>
+                        <li>Queso crema</li>
+                        <li>Tequila</li>
+                        <li>Ajo en polvo</li>
+                        <li>Ensalada de frutas</li>
+                        <li>Puré de calabaza</li>
+                        <li>Cereal infantil</li>
+                        <li>Vino blanco</li>
+                        <li>Desinfectante</li>
+                        <li>Polvo de hornear</li>
+                        <li>Mezcla para panqueques</li>
+                        <li>Pollo congelado</li>
+                        <li>Perejil</li>
+                        <li>Pasta de dientes</li>
+                        <li>Salmón ahumado</li>
+                        <li>Chocolates</li>
+                        <li>Camarones congelados</li>
+                        <li>Hamburguesas</li>
+                        <li>Manteca</li>
+                        <li>Vainilla</li>
+                        <li>Levadura</li>
+                        <li>Coca Cola</li>
+                        <li>Leche condensada</li>
+                        <li>Leche evaporada</li>
+                        <li>Crema de cacahuate</li>
+                        <li>Tortillas de maíz</li>
+                        <li>Tortillas de harina</li>
+                        <li>Palomitas de maíz</li>
+                        <li>Bolsa de papas fritas</li>
+                        <li>Chicles</li>
+                        <li>Pastillas de menta</li>
+                        <li>Agua con gas</li>
+                        <li>Caramelo</li>
+                        <li>Sopa instantánea</li>
+                        <li>Crema agria</li>
+                        <li>Batata</li>
+                        <li>Flan</li>
+                        <li>Rábano</li>
+                        <li>Crema dental</li>
+                        <li>Goma de mascar</li>
+                        <li>Col lombarda</li>
+                        <li>Melocotones</li>
+                        <li>Perejil seco</li>
+                        <li>Alcaparras</li>
+                        <li>Mazapán</li>
+                        <li>Pipas de girasol</li>
+                        <li>Salsa de soja</li>
+                        <li>Ramen</li>
+                        <li>Algas marinas</li>
+                        <li>Leche sin lactosa</li>
+                        <li>Queso azul</li>
+                        <li>Piernas de pollo</li>
+                        <li>Cubitos de caldo</li>
+                        <li>Conservas de verduras</li>
+                        <li>Cebolla en polvo</li>
+                        <li>Pan rallado</li>
+                        <li>Chocolate amargo</li>
+                        <li>Pasas</li>
+                        <li>Granola</li>
+                        <li>Avena en hojuelas</li>
+                        <li>Carne para guisar</li>
+                        <li>Chocolate para derretir</li>
+                        <li>Manteca vegetal</li>
+                        <li>Barritas de cereales</li>
+                        <li>Muesli</li>
+                        <li>Cuscús</li>
+                        <li>Higos</li>
+                        <li>Ciruelas</li>
+                        <li>Papaya</li>
+                        <li>Melón</li>
+                        <li>Coco rallado</li>
+                        <li>Semillas de chía</li>
+                        <li>Semillas de lino</li>
+                        <li>Semillas de calabaza</li>
+                        <li>Proteína en polvo</li>
+                        <li>Curry en polvo</li>
+                        <li>Estragón</li>
+                        <li>Romero</li>
+                        <li>Tomillo</li>
+                        <li>Cúrcuma</li>
+                        <li>Comino</li>
+                        <li>Pimienta negra</li>
+                        <li>Pimienta blanca</li>
+                        <li>Canela</li>
+                        <li>Clavos de olor</li>
+                        <li>Nuez moscada</li>
+                        <li>Especias para barbacoa</li>
+                        <li>Orégano</li>
+                        <li>Aceitunas verdes</li>
+                        <li>Maíz enlatado</li>
+                        <li>Guisantes enlatados</li>
+                        <li>Palmito</li>
+                        <li>Remolacha</li>
+                        <li>Espinacas congeladas</li>
+                        <li>Champiñones enlatados</li>
+                        <li>Piña en almíbar</li>
+                        <li>Cerezas</li>
+                        <li>Frambuesas</li>
+                        <li>Moras</li>
+                        <li>Arándanos</li>
+                        <li>Mango</li>
+                        <li>Kiwis</li>
+                        <li>Caquis</li>
+                        <li>Aguacate</li>
+                        <li>Duraznos enlatados</li>
+                        <li>Mermelada de fresa</li>
+                        <li>Mermelada de durazno</li>
+                        <li>Mermelada de naranja</li>
+                        <li>Mermelada de frambuesa</li>
+                        <li>Frutas secas</li>
+                        <li>Polen de abeja</li>
+                        <li>Leche de almendra</li>
+                        <li>Leche de soja</li>
+                        <li>Leche de coco</li>
+                        <li>Leche de avena</li>
+                        <li>Leche de arroz</li>
+                        <li>Bebida de avena</li>
+                        <li>Té verde</li>
+                        <li>Té negro</li>
+                        <li>Té de manzanilla</li>
+                        <li>Té de jengibre</li>
+                        <li>Jugo de tomate</li>
+                        <li>Jugo de manzana</li>
+                        <li>Jugo de arándano</li>
+                        <li>Jugo de zanahoria</li>
+                        <li>Batido de frutas</li>
+                        <li>Refresco de cola</li>
+                        <li>Refresco de limón</li>
+                        <li>Agua saborizada</li>
+                        <li>Licor de café</li>
+                        <li>Whisky</li>
+                        <li>Vodka</li>
+                        <li>Ron</li>
+                        <li>Ginebra</li>
+                        <li>Cerveza artesanal</li>
+                        <li>Cerveza sin alcohol</li>
+                        <li>Sidra</li>
+                        <li>Champaña</li>
+                        <li>Vermut</li>
+                        <li>Aguardiente</li>
+                        <li>Pastel de chocolate</li>
+                        <li>Tarta de queso</li>
+                        <li>Muffins</li>
+                        <li>Cupcakes</li>
+                        <li>Churros</li>
+                        <li>Brownies</li>
+                        <li>Turrón</li>
+                        <li>Tarta de manzana</li>
+                        <li>Natillas</li>
+                        <li>Bizcocho</li>
+                        <li>Barritas energéticas</li>
+                        <li>Barquillos</li>
+                        <li>Alfajores</li>
+                        <li>Caramelos masticables</li>
+                        <li>Néctar de frutas</li>
+                        <li>Sirope de arce</li>
+                        <li>Leche en polvo</li>
+                        <li>Leche malteada</li>
+                        <li>Fideos de arroz</li>
+                        <li>Fideos de trigo</li>
+                        <li>Sopa de miso</li>
+                        <li>Yogur griego</li>
+                        <li>Queso de cabra</li>
+                        <li>Carne de cerdo</li>
+                        <li>Galletas de avena</li>
+                        <li>Pan de centeno</li>
+                        <li>Chistorra</li>
+                        <li>Costillas de cerdo</li>
+                        <li>Empanadas</li>
+                        <li>Pastelitos</li>
+                        <li>Ensalada de pollo</li>
+                        <li>Ensalada de atún</li>
+                        <li>Sándwiches</li>
+                        <li>Wraps</li>
+                        <li>Arepas</li>
+                        <li>Macarrones</li>
+                        <li>Tostadas</li>
+                        <li>Ravioles</li>
+                        <li>Lasagna</li>
+                        <li>Alitas de pollo</li>
+                        <li>Té chai</li>
+                        <li>Té rooibos</li>
+                        <li>Queso parmesano</li>
+                        <li>Sorbete</li>
+                        <li>Galletas de jengibre</li>
+                        <li>Pan dulce</li>
+                        <li>Pan pita</li>
+                        <li>Pancakes</li>
+                        <li>Waffles</li>
+                        <li>Brócoli</li>
+                        <li>Coles de Bruselas</li>
+                        <li>Col rizada</li>
+                        <li>Papas dulces</li>
+                        <li>Zumo de limón</li>

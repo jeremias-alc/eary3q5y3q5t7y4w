@@ -1,0 +1,235 @@
+/* Contenedor principal del formulario */
+.details-container {
+    padding: 20px;
+    background-color: #b2deff;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .details-container input{
+    padding: 8px;
+    border-radius: 10px;
+    border: 0px solid #114a76;
+    background-color: #ddf1ff;
+    font-size: 0.875rem;
+    color: #666666;
+    outline: none;
+    font-family: 'Concert One', cursive;
+    height: 30px;
+  }
+
+  .details-container input:focus{
+    background-color: #ddf1ff;
+  }
+  
+  .details-container h2 {
+    font-size: 2.25rem;
+    font-weight: 500;
+    color: #114a76;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  /* Contenedor de selección de categoría */
+  .form-group select {
+    padding: 8px;
+    border-radius: 10px;
+    border: 0px solid #114a76;
+    background-color: #ddf1ff;
+    font-size: 0.875rem;
+    color: #666666;
+    height: 50px;
+  }
+  .form-group select:focus{
+    background-color: #ddf1ff;
+  }
+  
+  /* Contenedor flex para cantidad y unidad */
+  .flex-container {
+    display: flex;
+    margin-left: 10%;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  
+  
+  .flex-item,
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 1.500rem;
+    font-weight: 500;
+    color: #114a76;
+  }
+  
+  /* Estilos para inputs y textarea */
+  textarea,
+  select {
+    padding: 8px;
+    border-radius: 8px;
+    border: 0px solid #114a76;
+    background-color: #ddf1ff;
+    font-size: 0.875rem;
+    color: #666666;
+    outline: none;
+    font-family: 'Concert One', cursive;
+    margin-top: 20px;
+  }
+
+#description:focus{
+  background-color: #ddf1ff;
+}
+  
+  textarea {
+    width: 385px;
+    height: 171px;
+    resize: none;
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #999999;
+    background-color: #ffffff;
+  }
+
+  #detailsForm {
+    margin: 0 auto; /* Asegura que el formulario esté centrado en su contenedor */
+    width: 100%; /* O el ancho que desees */
+    max-width: 400px; /* Limitar el ancho máximo si es necesario */
+    margin-left: 45%;
+    margin-top: 5%
+}
+  
+  #detailsForm button{
+    background-color: #114a76;
+    border: 0px solid #999999;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    color: #ddf1ff;
+    font-family: 'Concert One', cursive;
+    cursor: pointer;
+  }
+
+  #detailsForm button:hover{
+    background-color: #072a44;
+    color: #ddf1ff;
+  }
+  /* Contenedor oculto */
+
+#formContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000; /* Asegura que aparezca por encima de otros elementos */
+}
+
+.details-container input, label {
+  margin-top: 20px;
+}
+
+/*LIST CONTAINER CSS*/
+#savedLists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px; /* Espacio entre las tarjetas */
+  padding: 20px;
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor en la página */
+  max-height: 860px; /* Establece una altura máxima */
+  overflow-y: auto;
+}
+
+#savedLists::-webkit-scrollbar {
+  width: 12px;
+}
+
+#savedLists::-webkit-scrollbar-track {
+  background: #ddf1ff;
+  border-radius: 15px;
+  margin: 4px;
+}
+
+#savedLists::-webkit-scrollbar-thumb {
+  background-color: #114a76;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+
+.list-card {
+  width: 200px;
+  background-color: #b2deff80;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+.progressbarcolor{
+  background-color: #a9d9fd;
+}
+.list-header{
+  width: 150px;
+}
+.list-header h3 {
+  font-size: 1.4em; 
+  margin: 0;
+  color: #114a76;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+  text-align: center;
+}
+
+
+.list-header p {
+  color: #072a44;
+  font-size: 0.9em;
+  margin-top: 15px;
+}
+
+.list-buttons {
+  display: flex;
+  gap: 8px; /* Espacio entre los botones */
+  margin-top: 10px;
+}
+
+.btn-open, .btn-delete {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 12px;
+  background-color: #b2deff;
+  font-family: 'Concert One', cursive;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+}
+.btn-open{
+  color: #117622;
+}
+.btn-delete{
+  color: #761111;
+}
+.btn-open:hover {
+  color: #00cb19; /* Color al pasar el cursor sobre el botón de abrir */
+}
+
+.btn-delete:hover {
+  color: #ff0000; /* Color al pasar el cursor sobre el botón de eliminar */
+}
