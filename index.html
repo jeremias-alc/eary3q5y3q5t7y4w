@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="StyleFP.css">
+    <script src="FuntionFP.js"></script>
+    <script src="FuntionFrontE.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="FormsStyle.css">
+    <title>JavySorts</title>
+    <link rel="icon" href="LogoJavySorts.png" type="image/png">
+</head>
+<body>
+    <header>
+        <img src="LogoHeader.png" alt="Logo Javy Sorts" class="logo">
+        <button class="header-buttons header-buttonspt1" onclick="showSection('mainContainer')">
+            <i class="fas fa-home"></i> Inicio
+        </button>
+        <button class="header-buttons header-buttonspt1" onclick="showSection('createListContainer')">
+            <i class="fas fa-plus-circle"></i> Crear Nueva Lista
+        </button>
+        <button class="header-buttons header-buttonspt1"  onclick="showSection('listContainer')">
+            <i class="fas fa-list"></i> Listas Creadas
+        </button>
+        
+
+        
+       <!-- <button class="header-buttons  header-buttonspt2" onclick="showSection('TrashSec')">
+            <i class="fas fa-trash-alt"></i> Papelera
+        </button> -->
+        <button class="header-buttons TrashButtonMargin header-buttonspt2" onclick="showSection('helpSection')">
+            <i class="fas fa-book"></i> Conoce JavySorts
+        </button>
+    <!--<button class="header-buttons header-buttonspt2" onclick="showSection('settingsSection')">
+            <i class="fas fa-cog"></i> Ajustes 
+        </button>-->
+    
+    <hr class="header-separator">
+    
+
+    <div class="social-container">
+        <a class="social-icon" href="https://www.facebook.com/jeremias.alcantara.902?locale=es_LA" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a class="social-icon" href="https://www.instagram.com/jrmsav/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a class="social-icon" href="https://www.youtube.com/@JeremiasAlcantara-b4w" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+    </div>    
+    </header>
+    
+    <main class="main-content" id="content">
+        <!--contenedor 1-->
+        <div id="mainContainer" style="display: block;">
+            <h1>Javy Sorts</h1>
+            <img src="LogoBody.png" alt="Logo Body" class="body-logo">
+            <button class="body-button" onclick="showSection('createListContainer')"><i class="fas fa-tasks"></i> Crear nueva lista</button>
+        </div>
+
+        <!--Crear listas-->
+        <div id="createListContainer">
+            <h2 class="sizeletrasCLC">Crear Nueva Lista</h2>
+            <label for="listName sizeletrasonlyc2">Nombre de la Lista:</label>
+            <input type="text" id="listName" placeholder="Ingresa el nombre de la lista" class="body-input">
+            <button class="add-button" id="Asignar"  onclick="createList()">
+                <i class="fas fa-file-alt"></i> Crear
+            </button>
+        
+            <!-- Botón para marcar la acción como "Hecho" -->
+            <button class="body-button" id="create" onclick="showSection('listContainer')"><i class="fas fa-sync-alt"></i> Actualizar y listas Creadas</button>
+        
+            <!-- Contenedores de la lista y productos sugeridos dentro de este contenedor -->
+            <div class="main-container">
+                <!-- Contenedor grande a la izquierda para la lista -->
+                <div class="lista-container">
+                    <h2 id="listTitle">Nueva lista</h2>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <div class="icon-container">
+                        <input type="text" id="searchInput" placeholder="Buscar en la lista" style="visibility: hidden;" onkeyup="searchInList()">
+                        <i class="fas fa-search" id="searchIcon" onclick="toggleSearch()"></i> <!-- Ícono de lupa -->
+                        <i class="fas fa-trash"></i> <!-- Ícono de papelera -->
+                        <i id="printIcon" class="fas fa-print" style="cursor: pointer;"></i> <!-- Ícono de imprimir -->
+                        <i class="fas fa-question-circle" onclick="toggleInfo()" style="cursor: pointer;"></i> 
+
+                    </div>
+                    
+                    <div class="imageANDproducts-container">
+                        <img src="CrearListas.jpg" alt="Imagen Crear Listas" class="centered-image">
+                    </div>
+                </div>
+        
+                <!-- Contenedor más pequeño a la derecha para agregar productos -->
+                <div class="contenedor-grande">
+                    <h2>Agregar productos</h2>
+                    <div>
+                        <input type="text" id="AskProduct" placeholder="Buscar producto" onkeyup="searchProducts()">
+                        <button id="lupa" onclick="AskAprod()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="productos-container">
+                        <ul class="producto-lista">
+                           <!-- :) -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Donde se almacenan las listas-->
+        <div id="listContainer">
+            <h2 class="sizeletrasc2c3">Listas Creadas</h2>
+            <button class="body-button" onclick="showSection('createListContainer')">
+                <i class="fas fa-tasks"></i> Crear nueva Lista
+            </button>
+            <img src="ListasCreadas.jpg" alt="CrearLTS" class="body-logo" id="listContainerImage">
+            <div id="savedLists"></div>
+        </div>
+        
+        <div id="TrashSec">
+            <h2 class="sizeletrasc2c3">Papelera</h2>
+            <div>
+                <img src="Trash.jpg" alt="Imagen de Iniciar Sesión" class="body-logo">
+            </div>
+        </div>
+
+        <div id="helpSection">
+            <h1>Javy Sorts</h1>
+            <p>info. ver 3/6</p>
+            <p>Javy Sorts es una página de listar productos de supermercados, orientado a productos de consumo humano. Si vas a ir al supermercado y necesitas comprar una serie de productos necesitas hacer una lista para que no se te olvide, Javy Sorts te ayuda en esa parte. Entras a la página, escoges tus productos y los organizas debidamente.</p>
+        
+            <div class="section-divider"></div>
+        
+            <h2>Características principales:</h2>
+            <ol>
+                <li><strong>Temática:</strong> La temática de la página es que el dueño de ella, Javy, te ceda un poco de su obra para que se te haga la vida un poco más simple. En cada apartado de la página está Javy, donde él te dice lo que hay ahí.</li>
+                <li><strong>Título:</strong> El título de la página es el nombre de su dueño, Javy el lobo. Su nombre viene de mis tres iniciales y la "y" para complementar, y "Sort" porque él ordena listas.</li>
+                <li><strong>Paleta de colores:</strong> Se buscó una paleta de colores suave a la vista. Se utilizan 5 tonos de azules: para el Body, Header, botones y letras, Hover de botones en las letras, los + de agregar y un azul oscuro para los Hover en general.</li>
+                <li><strong>Tipografía:</strong> Se utilizaron diseños de letras de Google Fonts que van acorde con lo animado y simple. Una fuente para el título y otra para los textos.</li>
+                <li><strong>Forma de la página:</strong> Fue inspirada en la página Listonic, principalmente en la disposición del header y el apartado de agregar productos.</li>
+                <li><strong>Imágenes y botones:</strong> Las imágenes que tiene son de Javy y los botones son normales con bordes redondeados para un diseño menos cuadrado.</li>
+                <li><strong>Secciones:</strong> Tiene un apartado principal donde Javy te da la bienvenida, el segundo apartado donde creas tus listas, el tercer contenedor para almacenar las listas guardadas. También tiene apartados de ajustes, iniciar sesión y otra información de la página.</li>
+            </ol>
+        
+            <div class="section-divider"></div>
+        
+            <p>La página es fácil de entender, actualmente solo tiene diseño web. Se le agregarán algunos detalles más de diseño y múltiples funcionalidades en el futuro.</p>
+        </div>
+
+
+<!-- FORMULARIO DE DETALLES-->
+<div id="formContainer" style="display: none;"> 
+    <form id="detailsForm" class="details-container"> 
+        <h2>Detalles</h2>
+    
+        <div class="form-group"> 
+            <label for="category">Categoría</label> 
+            <input id="category" name="category" type="text" placeholder="e.g. Alimentación">
+        </div> 
+
+        <div class="form-group"> 
+            <label for="amount">Cantidad</label> 
+            <input id="amount" name="amount" type="number" placeholder="e.g. 2" required> 
+        </div>
+
+        <div class="form-group"> 
+            <label for="unit">Unidad</label> 
+            <input id="unit" name="unit" type="text" placeholder="e.g. kg">
+        </div> 
+
+        <div class="form-group"> 
+            <label for="price">Precio</label> 
+            <input id="price" name="price" type="number" step="0.01" placeholder="e.g. 3.99">
+        </div>
+
+        <div class="form-group"> 
+            <label for="description">Descripción</label> 
+            <input id="description" name="description" type="text" placeholder="Descripción del producto">
+        </div> 
+
+        <button type="button" id="closeFormButton" onclick="showSection('createListContainer')">Cerrar</button>
+        <button type="submit" id="addProductButton">Agregar</button>
+    </form> 
+</div>
+
+
+        <!-- Modal de confirmación -->
+        <div id="printModal" class="print-modal">
+            <div class="modal-content">
+            <div>
+                <p>¿Quieres imprimir la lista <span id="modal-list-title"></span>?</p>
+            </div>
+            <div class="modal-footerbut">
+                <button id="cancelButton" class="modal-button">Cancelar</button>
+                <button id="printButton" class="modal-button">Imprimir</button>
+            </div>    
+            </div>
+        </div>
+
+        <!--MODAL DE INFORMACION-->
+        <div id="infoBox" class="info-box">
+            <div class="info-content">
+                <p>• Asigna el nombre a tu lista, créala y luego edítala.</p>
+                <p>• Agrega o modifica detalles a los productos seleccionando el ícono de la lista.</p>
+                <button onclick="toggleInfo()">Cerrar</button>
+            </div>
+        </div>
+
+    </main>
+    </main>
+</body>
+</html>
